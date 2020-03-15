@@ -18,7 +18,7 @@ app.set('view engine', 'pug');
 app.use(function(req,res, next){
   console.log(req.url, '커스텀 미들웨어!');
   // 반드시 next를 호출해야 다음으로 넘어감
-  //next();
+  next();
 });
 
 // 미들웨어 연결
