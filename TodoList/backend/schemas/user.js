@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const moment = require('moment');
+moment.tz.setDefault("Asia/Seoul");
 
 const { Schema } = mongoose;
 const userSchema = new Schema({
@@ -11,8 +13,8 @@ const userSchema = new Schema({
         required: true,
     },
     createdAt: {
-        type: Date,
-        default: Date.now,
+        type: String,
+        default: moment().format('YYYY-MM-DD'),
     },
 });
 
