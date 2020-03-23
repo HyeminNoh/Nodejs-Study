@@ -60,12 +60,10 @@
         if (!this.checkFormValidity()) {
           return
         }
-        // Push the name to submitted names
-        console.log(this.name);
-        // 페이지 이동
         // Hide the modal manually
         this.$nextTick(() => {
           this.$bvModal.hide('login')
+          return this.$router.push('/tasklist/'+this.name);
         })
       }
     }
