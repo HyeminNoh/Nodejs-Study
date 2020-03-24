@@ -9,10 +9,10 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
-    path: '/tasklist/:name',
+    path: '/tasklist',
     name: 'TaskList',
     component: TaskList
   }
