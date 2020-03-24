@@ -29,12 +29,12 @@ router.post('/login', function (req, res, next) {
       if (err) {
         res.json({
           type: false,
-          data: "Error occured " + err
+          data: "오류 발생: " + err
         });
       } else if (result == null) {
         res.json({
           type: false,
-          data: "Incorrect email/password"
+          data: "아이디/비밀번호가 틀립니다."
         });
       } else if (result != null) {
         res.json({
@@ -54,19 +54,19 @@ router.post('/signup', function (req, res, next) {
       if (err) {
         res.json({
           type: false,
-          data: "Error occured " + err
+          data: "오류 발생 " + err
         });
       } else if (result != null) {
         res.json({
           type: false,
-          data: "name already exists"
+          data: "동일한 이름이 이미 존재합니다."
         });
       } else if (result == null) {
         localSignup(name, pwd, function (err, savedUser) {
           if (err) {
             res.json({
               type: false,
-              data: "Error occured " + err
+              data: "오류 발생 " + err
             });
           } else {
             res.json({
@@ -85,7 +85,7 @@ function localSignup(userName, userPassword, next) {
     name: userName,
     pwd: userPassword,
   });
-  console.log("사용자 등록: "+userModel);
+  //console.log("사용자 등록: "+userModel);
   userModel.save(function (err, newUser) {
       var token = jwt.sign(userModel.toJSON(), jwtSecret)
       newUser.jsonWebToken = token
@@ -103,10 +103,10 @@ router.get('/me', ensureAuthorized, function (req, res, next) {
       if (err){
           res.json({
               type: false,
-              data: "Error occured: " + err
+              data: "오류 발생: " + err
           });
       } else {
-          ßconsole.log("me : " + result);
+          //console.log("me : " + result);
           res.json({
               type: true,
               data: result
