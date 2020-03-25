@@ -9,9 +9,9 @@
     <div id="task-lists">
       <b-list-group v-if="taskState && taskList.length">
         <b-list-group-item class="d-flex justify-content-between" v-for="(item, index) in taskList" :key="index">
-          <b-form-checkbox size="lg">
-            <p>{{item.title}}</p>
+          <b-form-checkbox v-model=item.completed size="lg" disabled>
           </b-form-checkbox>
+          <h5>{{item.title}}</h5>
           <div>
             <b-button style="margin-right:10px;">수 정</b-button>
             <b-button >삭 제</b-button>
@@ -82,16 +82,16 @@ export default {
       axios
         .post("/tasks/", {
           headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-type": "application/x-www-form-urlencoded"
-          },
+              'Access-Control-Allow-Origin': '*',
+              'Content-type': 'application/x-www-form-urlencoded'
+            },
           id: this.userData._id,
           title: this.taskInput,
           completed: false
         })
         .then(result => {
-          console.log(result);
-          this.$route.push("/");
+          alert(result.status+": 추가 성공");
+          this.loadData();
         });
     }
   }
