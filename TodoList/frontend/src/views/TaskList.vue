@@ -14,7 +14,7 @@
           <h5>{{item.title}}</h5>
           <div>
             <b-button style="margin-right:10px;">수 정</b-button>
-            <b-button >삭 제</b-button>
+            <b-button :id=index @click="remove($event)">삭 제</b-button>
           </div>
         </b-list-group-item>
       </b-list-group>
@@ -93,6 +93,16 @@ export default {
           alert(result.status+": 추가 성공");
           this.loadData();
         });
+    },
+    remove: function(element) {
+      console.log(element);
+      var listIndex = element.currentTarget.id;
+      var taskId = this.taskList[listIndex]._id;
+      axios.delete('/tasks/'+taskId)
+      .then(result=>{
+        alert(result.data.statusText+": 삭제 성공");
+        this.loadData();
+      })
     }
   }
 };
