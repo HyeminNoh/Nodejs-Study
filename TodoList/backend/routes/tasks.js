@@ -5,11 +5,26 @@ var router = express.Router();
 router.get('/:id', function(req, res, next){
     Task.find({userId: req.params.id}).populate('userId')
     .then((task)=>{
-        console.log(task);
-        res.json(task);
+        if(task.length<=0){
+            res.json({
+                type: false,
+                data: "할일이 없어용"
+            });
+        }
+        else{
+            //console.log(task);
+            res.json({
+                type: true,
+                data: task
+            });
+        }
     })
     .catch((err)=>{
-        console.error(err);
+        //console.error(err);
+        res.json({
+            type: false,
+            data: "오류 발생: " + err
+        });
         next(err);
     });
 });
@@ -17,7 +32,6 @@ router.post('/', function(req, res, next){
     const task = new Task({
         userId: req.body.id,
         title: req.body.title,
-        content: req.body.content,
         completed: req.body.completed,
     });
     task.save()
@@ -33,7 +47,7 @@ router.post('/', function(req, res, next){
     });
 });
 router.patch('/:id', function(req, res, next){
-    Task.update({_id:req.params.id}, {title: req.body.title, content: req.body.content, completed: req.body.completed})
+    Task.update({_id:req.params.id}, {title: req.body.title, completed: req.body.completed})
     .then((result)=>{
         res.json(result);
     })
