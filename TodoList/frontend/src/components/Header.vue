@@ -21,7 +21,7 @@
           <b-form-input id="name-input" v-model="name" :state="nameState" required></b-form-input>
         </b-form-group>
         <b-form-group :state="pwdState" label="비밀번호" label-for="pwd-input">
-          <b-form-input id="pwd-input" v-model="pwd" :state="pwdState" required></b-form-input>
+          <b-form-input type="password" aria-describedby="password-help-block" id="pwd-input" v-model="pwd" :state="pwdState" required></b-form-input>
         </b-form-group>
       </form>
     </b-modal>
@@ -38,7 +38,7 @@
           <b-form-input id="name-input" v-model="name" :state="nameState" required></b-form-input>
         </b-form-group>
         <b-form-group :state="pwdState" label="비밀번호" label-for="pwd-input">
-          <b-form-input id="pwd-input" v-model="pwd" :state="pwdState" required></b-form-input>
+          <b-form-input type="password" aria-describedby="password-help-block" id="pwd-input" v-model="pwd" :state="pwdState" required></b-form-input>
         </b-form-group>
       </form>
     </b-modal>
