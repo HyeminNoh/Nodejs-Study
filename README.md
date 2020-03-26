@@ -3,10 +3,12 @@
     🌱Node.js를 이용한 서비스 구축을 공부합니다 👩‍💻
 
 
-## To-do List 웹 만들기
+## ✔️ To-do List 웹 만들기
 
-학습한 내용을 바탕으로 `express`와 `mongoose`를 활용한 To-do List 웹을 만들어봅니다.
+학습한 내용을 바탕으로 `express`, `mongoose`와 `vue`를 활용한 To-do List 웹 구현  
 
+<img src='./screenshot/TodoListMain.png' style="border: 1px solid" width="600px"/>
+<img src='./screenshot/TodoListTaskList.png' style="border: 1px solid" width="600px"/>
 ----
 
 ### < 전체 디렉토리 구조 >
