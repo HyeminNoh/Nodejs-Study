@@ -7,6 +7,7 @@
       </b-input-group-append>
     </b-input-group>
     <div id="task-lists">
+      <h3 v-if="!taskState" style="text-align:center;">{{name}} 해야할 일 없다 🎉</h3>
       <b-list-group v-if="taskState && taskList.length">
         <b-list-group-item class="d-flex justify-content-between" v-for="(item, index) in taskList" :key="index">
           <b-form-checkbox v-model=item.completed size="lg" disabled>
@@ -105,15 +106,11 @@ export default {
         })
         .then(result => {
           if (result.data.type == true) {
-            this.taskState = "true";
+            this.taskState = true;
             this.taskList = result.data.data;
-          } else {
-            this.taskState = "false";
-            var cards = document.getElementById("task-cards");
-            var notask = document.createElement("div");
-            notask.innerText = this.name + " " + result.data.data + " 😝";
-            notask.id = "notask";
-            cards.appendChild(notask);
+          }
+          else{
+            this.taskState = false;
           }
         });
     },
