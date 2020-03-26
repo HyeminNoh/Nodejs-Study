@@ -7,8 +7,9 @@
 
 학습한 내용을 바탕으로 `express`, `mongoose`와 `vue`를 활용한 To-do List 웹 구현  
 
-<img src='./screenshot/TodoListMain.png' style="border: 1px solid"/>
-<img src='./screenshot/TodoListTaskList.png' style="border: 1px solid"/>
+<kbd><img src='./screenshot/TodoListMain.png'/></kbd>
+
+<kbd><img src='./screenshot/TodoListTaskList.png'/></kbd>
 
 ----
 
