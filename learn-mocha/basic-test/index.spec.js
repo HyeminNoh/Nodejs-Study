@@ -67,4 +67,13 @@ describe('GET /users/1',()=>{
                 .end(done);
         });
     });
+    describe('실패 시', ()=>{
+        it('400을 응답한다 ', (done)=>{
+            request(app)
+                .delete('/users/one')
+                .expect(400)
+                .end(done);
+        });
+        
+    })
 });
