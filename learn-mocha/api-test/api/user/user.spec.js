@@ -1,9 +1,10 @@
-const should = require('should');
+// test spec
 const request = require('supertest');
-const app = require('./index');
+const should = require('should');
+const app = require('../../');
 
 describe('Get /users는', ()=>{
-    describe('성공시', ()=>{
+    describe('성공 시', ()=>{
         it('유저 객체를 담은 배열로 응답한다 ', (done)=>{
             request(app)
                 .get('/users')
@@ -12,7 +13,7 @@ describe('Get /users는', ()=>{
                     done();
                 });
         });
-        it('최개 limit 갯수만큼 응답한다 ', (done)=>{
+        it('최대 limit 갯수만큼 응답한다 ', (done)=>{
             request(app)
                 .get('/users?limit=2')
                 .end((err, res)=>{
@@ -21,7 +22,7 @@ describe('Get /users는', ()=>{
                 });
         });
     });
-    describe('실패시', ()=>{
+    describe('실패 시', ()=>{
         it('limit이 숫자형이 아니면 400을 응답한다', (done)=>{
             request(app)
                 .get('/users?limit=two')
@@ -59,7 +60,7 @@ describe('GET /users/1는', ()=>{
 })
 
 describe('Delete /users/1',()=>{
-    describe('성공시',()=>{
+    describe('성공 시',()=>{
         it('204를 응답한다 ',(done)=>{
             request(app)
                 .delete('/users/1')
