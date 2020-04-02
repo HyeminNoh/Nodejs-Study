@@ -14,7 +14,10 @@
     ├── TodoList          --- To-do List 웹 만들어보기
     ├── TutorialPractice  --- Javascript 및 node.js 간단한 실습 
     ├── express-test      --- express-generator 활용 
-    └── learn-mongoose    --- express와 mongoose 연동
+    ├── learn-mocha       --- TDD, SuperTest 실습
+    ├── learn-mongoose    --- express와 mongoose 연동
+    ├── learn-oauth       --- passport.js를 활용한 소셜로그인 실습
+    └── screenshot
 ```
 
 ## 🖥 To-do List 웹   
