@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  button= '로그인 해보자'
+  component
+    h1= title
+    p 로그인에 성공했군 ㅇㅅㅇ
+    br
+    button#logout-btn 로그아웃해봐랏
+
+    script(src='/javascripts/index.js')
