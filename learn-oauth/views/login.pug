@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  
+  component
+    h1= title
+    p 로그인 해보장 ㅇㅅㅇ
+    button#google-btn Google Login
+    button#github-btn Github Login
+
+    script(src='/javascripts/login.js')
