@@ -23,6 +23,17 @@
 ## 🖥 To-do List 웹   
 
 학습한 내용을 바탕으로 `express`, `mongoose`와 `vue`를 활용한 To-do List 웹 구현  
+(배포하지 않았기 때문에 빌드하지 않고 따로 실행하며 동작 확인만 함)
+
+서버 실행
+```
+cd TodoList/backend && npm start
+```
+
+프론트 실행 
+```
+cd TodoList/frontend && npm run serve
+```
 
 <kbd><img src='./screenshot/TodoListMain.png'/></kbd>
 
