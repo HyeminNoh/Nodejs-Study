@@ -41,4 +41,5 @@ cd TodoList/frontend && npm run serve
 
 ### 🔍 참고
 
-> * Node.js 교과서 - 조현영 지음
+> * Node.js 교과서 - 조현영 지음  
+> * Inflearn 온라인 강의: https://www.inflearn.com/course/테스트주도개발-tdd-nodejs-api#  
